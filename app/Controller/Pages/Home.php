@@ -5,18 +5,24 @@ namespace App\Controller\Pages;
 use \App\Utils\View;
 use \App\Model\Entity\Organization;
 
-class Home extends Page{
+class Home extends Page
+{
     /**
-    * Método responsável por retornar o conteudo (view) da home
-    * @return string
-    */
-    public static function getHome(){ 
+     * Método responsável por retornar o conteudo (view) da home
+     * @return string
+     */
+    public static function getHome()
+    {
+        //NOVA INSTANCIA DE ORGANIZAÇÃO
+        $obOrganization = new Organization;
+
         // VIEW DA HOME
-        $content = View::render('pages/home',[
-            'name'        => 'Herculano',
-            'description' => 'Desenvolvedor de sistemas',
-            'site'        => 'www.herculanosilva.com.br' 
+        $content = View::render('pages/home', [
+            'name'        => $obOrganization->name,
+            'description' => $obOrganization->description,
+            'site'        => $obOrganization->site
         ]);
+
         // RETORNA A VIEW DA PAGINA 
         return parent::getPage('Herculano - HOME', $content);
     }
