@@ -8,7 +8,7 @@ class View{
     /**
     *  Método responsavel por retornar o conteúdo de uma view
     *  @param string $view
-    *  return string
+    *  @return string
     */
     private static function getContentView($view){
         $file = __DIR__.'/../../resources/view/'.$view.'.html';
